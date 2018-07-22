@@ -1,0 +1,416 @@
+use Libraries.Game.Game
+use Libraries.Game.Graphics.Drawable
+use Libraries.Game.Graphics.Color
+use Libraries.Game.Graphics.Camera
+use Libraries.Game.InputMonitor
+use Libraries.Interface.Events.KeyboardEvent
+use Libraries.Sound.Audio
+use Libraries.Interface.Events.CollisionEvent2D
+use Libraries.Interface.Events.CollisionListener2D
+use Libraries.Interface.Item2D
+
+class Main is Game, CollisionListener2D
+    InputMonitor monitor
+    KeyboardEvent keys
+    Audio keySound
+    Audio keySound1
+    Audio keySound2
+    Audio keySound3
+
+    number speed = 100
+    Drawable treasures
+    Drawable horses
+    Drawable tree
+    Drawable tree2
+    Drawable bat
+    Drawable rectangle1
+    Drawable rectangle2
+    Drawable rectangle3
+    Drawable rectangle4
+    Drawable rectangle5
+    Drawable rectangle6
+    Drawable rectangle7
+    Drawable rectangle8
+    Drawable rectangle9
+    Drawable rectangle10
+    Drawable rectangle11
+    Drawable rectangle12
+    Drawable rectangle13
+    Drawable rectangle14    
+    Drawable rectangle15
+    Drawable rectangle16
+    Drawable rectangle17
+    Drawable rectangle18
+    Drawable rectangle19
+    Drawable rectangle20
+    Drawable rectangle21
+    Drawable rectangle22
+    Drawable rectangle23
+    Drawable rectangle24
+    Drawable rectangle25
+    Drawable rectangle26
+    Drawable rectangle27
+    Drawable rectangle28
+    Drawable rectangle29
+    Drawable rectangle30
+    Drawable rectangle31
+    Drawable rectangle32
+    Drawable rectangle33
+    Drawable rectangle34
+    Drawable rectangle35
+    Drawable rectangle36
+    Drawable rectangle37
+    Drawable rectangle38
+    Drawable rectangle39
+    Drawable rectangle40
+    Drawable rectangle41
+    Drawable rectangle42
+    Drawable rectangle43
+    Drawable rectangle44    
+    Drawable rectangle45
+    Drawable rectangle46
+    Drawable rectangle47
+    Drawable rectangle48
+    Drawable rectangle49
+    Drawable rectangle50
+    Drawable rectangle51
+    Drawable rectangle52
+    Drawable rectangle53
+    Drawable rectangle54
+    Drawable rectangle55
+    Drawable rectangle56
+    Drawable rectangle57
+    Drawable rectangle58
+    Drawable rectangle59
+    Drawable rectangle60
+    Drawable rectangle61
+    Drawable rectangle62
+    Drawable rectangle63
+    Drawable rectangle64
+    Drawable soccerball
+    //Second Row
+    Color color
+    Color brown
+    number divisor = 255
+
+    action Main
+        StartGame()
+    end
+
+    action CreateGame
+        SetScreenSize(700, 700)
+        Camera camera = GetCamera2D()
+        camera:SetSize(1600, 1600)
+        camera:SetPosition(1600/2, 1600/2, camera:GetPosition():GetZ())
+        camera:Update()
+
+        AddCollisionListener(me)
+
+output "First: " + 218/divisor + ", second: " + 165/divisor +", third: " +19/divisor
+color:SetColor(218/divisor, 165/divisor, 19/divisor, 1)
+rectangle1:LoadFilledRectangle(200, 200, color:Green())
+rectangle1:SetPosition(0, 0)
+Add (rectangle1)
+rectangle2:LoadFilledRectangle(200, 200, color:Green())
+rectangle2:SetPosition(200, 0)
+Add (rectangle2)
+rectangle3:LoadFilledRectangle(200, 200, color:Green())
+rectangle3:SetPosition(400, 0)
+rectangle3:SetCollidable(true)
+rectangle3:SetName("grass")
+Add (rectangle3)
+rectangle4:LoadFilledRectangle(200, 200, color)
+rectangle4:SetPosition(600, 0)
+Add (rectangle4)
+rectangle5:LoadFilledRectangle(200, 200, color:Green())
+rectangle5:SetPosition(800, 0)
+rectangle5:SetCollidable(true)
+rectangle5:SetName("grass")
+Add (rectangle5)
+rectangle6:LoadFilledRectangle(200, 200, color:Green())
+rectangle6:SetPosition(1000, 0)
+Add (rectangle6)
+rectangle7:LoadFilledRectangle(200, 200, color:Green())
+rectangle7:SetPosition(1200, 0)
+Add (rectangle7)
+rectangle8:LoadFilledRectangle(200, 200, color:Green())
+rectangle8:SetPosition(1400, 0)
+Add (rectangle8)
+rectangle9:LoadFilledRectangle(200, 200, color:Green())
+rectangle9:SetPosition(0, 200)
+Add (rectangle9)
+rectangle10:LoadFilledRectangle(200, 200, color:Green())
+rectangle10: SetPosition(200, 200)
+Add (rectangle10)
+rectangle11:LoadFilledRectangle(200, 200, color:Green())
+rectangle11: SetPosition(400, 200)
+rectangle11:SetCollidable(true)
+rectangle11:SetName("grass")
+Add (rectangle11)
+
+rectangle12:LoadFilledRectangle(200, 200, color)
+rectangle12: SetPosition(600, 200)
+Add (rectangle12)
+rectangle13:LoadFilledRectangle(200, 200, color)
+rectangle13: SetPosition(800, 200)
+Add (rectangle13)
+rectangle14:LoadFilledRectangle(200, 200, color:Green())
+rectangle14: SetPosition(1000, 200)
+rectangle14:SetCollidable(true)
+rectangle14:SetName("grass")
+Add (rectangle14)
+rectangle15:LoadFilledRectangle(200, 200, color:Green())
+rectangle15: SetPosition(1200, 200)
+Add (rectangle15)
+rectangle16:LoadFilledRectangle(200, 200, color:Green())
+rectangle16: SetPosition(1400, 200)
+Add (rectangle16)
+rectangle17:LoadFilledRectangle(200, 200, color:Green())
+rectangle17: SetPosition(0, 400)
+Add (rectangle17)
+rectangle18:LoadFilledRectangle(200, 200, color:Green())
+rectangle18: SetPosition(200, 400)
+Add (rectangle18)
+rectangle19:LoadFilledRectangle(200, 200, color:Green())
+rectangle19: SetPosition(400, 400)
+Add (rectangle19)
+rectangle20:LoadFilledRectangle(200, 200, color:Green())
+rectangle20: SetPosition(600, 400)
+rectangle20:SetCollidable(true)
+rectangle20:SetName("grass")
+Add (rectangle20)
+rectangle21:LoadFilledRectangle(200, 200, color)
+rectangle21: SetPosition(800, 400)
+Add (rectangle21)
+rectangle22:LoadFilledRectangle(200, 200, color:Green())
+rectangle22: SetPosition(1000, 400)
+rectangle22:SetCollidable(true)
+rectangle22:SetName("grass")
+Add (rectangle22)
+rectangle23:LoadFilledRectangle(200, 200, color:Green())
+rectangle23: SetPosition(1200, 400)
+Add (rectangle23)
+rectangle24:LoadFilledRectangle(200, 200, color:Green())
+rectangle24: SetPosition(1400, 400)
+Add (rectangle24)
+rectangle25:LoadFilledRectangle(200, 200, color:Green())
+rectangle25: SetPosition(0, 600)
+Add (rectangle25)
+rectangle26:LoadFilledRectangle(200, 200, color:Green())
+rectangle26: SetPosition(200, 600)
+rectangle26:SetCollidable(true)
+rectangle26:SetName("grass")
+Add (rectangle26)
+rectangle27:LoadFilledRectangle(200, 200, color)
+rectangle27: SetPosition(400, 600)
+Add (rectangle27)
+rectangle28:LoadFilledRectangle(200, 200, color)
+rectangle28: SetPosition(600, 600)
+Add (rectangle28)
+rectangle29:LoadFilledRectangle(200, 200, color)
+rectangle29: SetPosition(800, 600)
+Add (rectangle29)
+rectangle30:LoadFilledRectangle(200, 200, color:Green())
+rectangle30: SetPosition(1000, 600)
+rectangle30:SetCollidable(true)
+rectangle30:SetName("grass")
+Add (rectangle30)
+rectangle31:LoadFilledRectangle(200, 200, color:Green())
+rectangle31: SetPosition(1200, 600)
+Add (rectangle31)
+rectangle32:LoadFilledRectangle(200, 200, color:Green())
+rectangle32: SetPosition(1400, 600)
+Add (rectangle32)
+rectangle33:LoadFilledRectangle(200, 200, color:Green())
+rectangle33: SetPosition(0, 800)
+rectangle33:SetCollidable(true)
+rectangle33:SetName("grass")
+Add (rectangle33)
+rectangle34:LoadFilledRectangle(200, 200, color)
+rectangle34: SetPosition(200, 800)
+Add (rectangle34)
+rectangle35:LoadFilledRectangle(200, 200, color)
+rectangle35: SetPosition(400, 800)
+Add (rectangle35)
+rectangle36:LoadFilledRectangle(200, 200, color:Green())
+rectangle36: SetPosition(600, 800)
+rectangle36:SetCollidable(true)
+rectangle36:SetName("grass")
+Add (rectangle36)
+rectangle37:LoadFilledRectangle(200, 200, color:Green())
+rectangle37: SetPosition(800, 800)
+Add (rectangle37)
+rectangle38:LoadFilledRectangle(200, 200, color:Green())
+rectangle38: SetPosition(1000, 800)
+Add (rectangle38)
+rectangle39:LoadFilledRectangle(200, 200, color:Green())
+rectangle39: SetPosition(1200, 800)
+Add (rectangle39)
+rectangle40:LoadFilledRectangle(200, 200, color:Green())
+rectangle40: SetPosition(1400, 800)
+Add (rectangle40)
+rectangle41:LoadFilledRectangle(200, 200, color:Green())
+rectangle41: SetPosition(0, 1000)
+rectangle41:SetCollidable(true)
+rectangle41:SetName("grass")
+Add (rectangle41)
+rectangle42:LoadFilledRectangle(200, 200, color)
+rectangle42: SetPosition(200, 1000)
+Add (rectangle42)
+rectangle43:LoadFilledRectangle(200, 200, color:Green())
+rectangle43: SetPosition(400, 1000)
+Add (rectangle43)
+rectangle44:LoadFilledRectangle(200, 200, color:Green())
+rectangle44: SetPosition(600, 1000)
+rectangle44:SetCollidable(true)
+rectangle44:SetName("grass")
+Add (rectangle44)
+rectangle45:LoadFilledRectangle(200, 200, color:Green())
+rectangle45: SetPosition(800, 1000)
+Add (rectangle45)
+rectangle46:LoadFilledRectangle(200, 200, color:Green())
+rectangle46: SetPosition(1000, 1000)
+Add (rectangle46)
+rectangle47:LoadFilledRectangle(200, 200, color:Green())
+rectangle47: SetPosition(1200, 1000)
+Add (rectangle47)
+rectangle48:LoadFilledRectangle(200, 200, color:Green())
+rectangle48: SetPosition(1400, 1000)
+Add (rectangle48)
+rectangle49:LoadFilledRectangle(200, 200, color:Green())
+rectangle49: SetPosition(0, 1200)
+rectangle49:SetCollidable(true)
+rectangle49:SetName("grass")
+Add (rectangle49)
+rectangle50:LoadFilledRectangle(200, 200, color)
+rectangle50: SetPosition(200, 1200)
+Add (rectangle50)
+rectangle51:LoadFilledRectangle(200, 200, color)
+rectangle51: SetPosition(400, 1200)
+Add (rectangle51)
+rectangle52:LoadFilledRectangle(200, 200, color:Green())
+rectangle52: SetPosition(600, 1200)
+rectangle52:SetCollidable(true)
+rectangle52:SetName("grass")
+Add (rectangle52)
+rectangle53:LoadFilledRectangle(200, 200, color:Green())
+rectangle53: SetPosition(800, 1200)
+Add (rectangle53)
+rectangle54:LoadFilledRectangle(200, 200, color:Green())
+rectangle54: SetPosition(1000, 1200)
+Add (rectangle54)
+rectangle55:LoadFilledRectangle(200, 200, color:Green())
+rectangle55: SetPosition(1200, 1200)
+Add (rectangle55)
+rectangle56:LoadFilledRectangle(200, 200, color:Green())
+rectangle56: SetPosition(1400, 1200)
+Add (rectangle56)
+rectangle57:LoadFilledRectangle(200, 200, color:Green())
+rectangle57: SetPosition(0, 1400)
+Add (rectangle57)
+rectangle58:LoadFilledRectangle(200, 200, color:Green())
+rectangle58: SetPosition(200, 1400)
+rectangle58:SetCollidable(true)
+rectangle58:SetName("grass")
+Add (rectangle58)
+rectangle59:LoadFilledRectangle(200, 200, color)
+rectangle59: SetPosition(400, 1400)
+Add (rectangle59)
+rectangle60:LoadFilledRectangle(200, 200, color:Green())
+rectangle60: SetPosition(600, 1400)
+rectangle60:SetCollidable(true)
+rectangle60:SetName("grass")
+Add (rectangle60)
+rectangle61:LoadFilledRectangle(200, 200, color:Green())
+rectangle61: SetPosition(800, 1400)
+Add (rectangle61)
+rectangle62:LoadFilledRectangle(200, 200, color:Green())
+rectangle62: SetPosition(1000, 1400)
+Add (rectangle62)
+rectangle63:LoadFilledRectangle(200, 200, color:Green())
+rectangle63: SetPosition(1200, 1400)
+Add (rectangle63)
+rectangle64:LoadFilledRectangle(200, 200, color:Green())
+rectangle64: SetPosition(1400, 1400)
+Add (rectangle64)
+soccerball:Load("images/soccerball.png")
+//soccerball:SetScale(2)
+soccerball:SetSize (150, 150)
+soccerball:SetPosition(600,0)
+soccerball:SetName("soccerball")
+Add (soccerball)
+keySound:Load("audio/backup.wav") 
+keySound1:Load("audio/forward.wav")
+keySound2:Load("audio/right.wav")
+keySound3:Load("audio/left.wav")
+Add (tree)
+tree:Load("images/darktree_CC0.png")
+tree:SetPosition(300, 300)
+tree:SetSize(300, 300)
+Add (tree2)
+tree2:Load("images/tree2.png")
+tree2:SetPosition(600, 800)
+tree2:SetSize(300, 300)
+Add (bat)
+bat:Load("images/Bat.png")
+bat:SetPosition(60, 1000)
+bat:SetSize(150, 150)
+Add (treasures)
+treasures:Load("images/treasures.png")
+treasures:SetSize (150, 150)
+treasures:SetPosition(400, 1450)
+Add (horses)
+horses:Load("images/horses.png")
+horses:SetSize(200, 200)
+horses:SetPosition(700, 1200)
+end
+
+  
+    action Update(number seconds)
+ // this if statement checks when the Up key is pressed
+        if monitor:IsKeyPressed(keys:UP)
+        // this line of code gets the current y position of the bunny
+        number y = soccerball:GetY()
+        // this line calculates the new y position based on the current y
+        number newY = y + speed * seconds
+        // this line sets the new y position
+        soccerball:SetY(newY)
+        keySound1:Play()
+        end
+        if monitor:IsKeyPressed(keys:DOWN)
+        // this line of code gets the current y position of the bunny
+        number y = soccerball:GetY()
+        // this line calculates the new y position based on the current y
+        number newY = y - speed * seconds
+        // this line sets the new y position
+        soccerball:SetY(newY)
+        keySound:Play()
+        end
+        // this if statement checks when the Left key is pressed
+        if monitor:IsKeyPressed(keys:LEFT)
+        // this line gets the current x position
+        number x = soccerball:GetX()
+        // this line calculates the new x position based on the current x
+        number newX = x - speed * seconds
+        // this line sets the new x position
+        soccerball:SetX(newX)
+        keySound3:Play()
+        end
+        // this if statement checks when the Left key is pressed
+        if monitor:IsKeyPressed(keys:RIGHT)
+        // this line gets the current x position
+        number x = soccerball:GetX()
+        // this line calculates the new x position based on the current x
+        number newX = x + speed * seconds
+        // this line sets the new x position
+        soccerball:SetX(newX)
+        keySound2:Play()
+        end
+    end
+action BeginCollision(CollisionEvent2D event)
+    Drawable itemA = cast(Drawable, event:GetItemA())
+    Drawable itemB = cast(Drawable, event:GetItemB())
+    if itemA:GetName() = "grass"
+    end
+end
+end
